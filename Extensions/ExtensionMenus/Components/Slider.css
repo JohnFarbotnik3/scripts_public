@@ -1,0 +1,32 @@
+
+.class_slider {
+	position: relative;
+	display: flex;
+	background: #0007;
+	height: fit-content;
+	margin: 2px;
+	outline: 2px solid #333;
+	opacity: 0.5;
+	border-radius: 2px;
+}
+.class_slider_bar {
+	display: flex;
+	align-self: center;
+	position: absolute;
+	background: rgb(25, 144, 140);
+	height: 100%;
+	border-radius: 2px;
+}
+.class_slider:hover {
+	opacity: 1.0;
+}
+.class_slider .class_textdiv {
+	background: none;
+	position: relative;
+	width: 50%;
+	height: fit-content;
+	margin: -2px;
+	display: flex;
+	align-content: center;
+}
+

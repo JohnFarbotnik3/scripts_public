@@ -1,0 +1,7 @@
+
+._PlaylistItem {}
+
+._PlaylistItem_span_div:hover {
+	filter: brightness(150%);
+}
+

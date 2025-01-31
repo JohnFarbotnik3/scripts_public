@@ -1,0 +1,31 @@
+
+
+
+> upgrade FFMPEG + capture-tool
+- https://video.stackexchange.com/questions/22203/ffmpeg-demux-concat-dropping-audio-at-stitch-points
+* the audio cracks may be due to dropped audio due to sample rate, priming samples, or something like that.
+* to fix this, extract the audio from the original media segments output by the browser,
+	concat it all together, then re-encode it, then combine with full video.
+* this likely means splitting the media pipeline to seperate video and audio again,
+	but this time they are at least recorded together.
+
+
+> read:
+* https://www.reddit.com/r/AV1/comments/k7colv/encoder_tuning_part_1_tuning_libvpxvp9_be_more/
+	? "--profile=2"
+	? "--auto-alt-ref=1"
+	? "--arnr-maxframes=7"
+	? "--aq-mode=0"
+	? "--bit-depth=10"
+	? "-hide_banner"
+* example commands:
+	ffmpeg -i input.mkv -c:v libvpx-vp9 -pix_fmt yuv420p10le -pass 1 -quality good -threads 4 -profile:v 2 -lag-in-frames 25 -crf 25 -b:v 0 -g 240 -cpu-used 4 -auto-alt-ref 1 -arnr-maxframes 7 -arnr-strength 4 -aq-mode 0 -tile-rows 0 -tile-columns 1 -enable-tpl 1 -row-mt 1 -f null -
+	ffmpeg -i input.mkv -c:v libvpx-vp9 -pix_fmt yuv420p10le -pass 2 -quality good -threads 4 -profile:v 2 -lag-in-frames 25 -crf 25 -b:v 0 -g 240 -cpu-used 4 -auto-alt-ref 1 -arnr-maxframes 7 -arnr-strength 4 -aq-mode 0 -tile-rows 0 -tile-columns 1 -enable-tpl 1 -row-mt 1 output.mkv
+
+
+
+
+
+
+
+

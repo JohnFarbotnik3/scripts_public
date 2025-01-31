@@ -1,0 +1,48 @@
+
+.class_textdiv {
+	color: #FFF;
+	background: #033;
+	display: flex;
+	margin: 2px;
+	padding: 2px;
+	height: fit-content;
+	overflow-wrap: anywhere;
+}
+
+.class_textspan {
+	color: #FFF;
+}
+
+.class_textinput {
+	color: #CCF;
+	background: #000;
+	display: flex;
+	height: auto;
+	margin:  2px;
+	padding: 2px;
+	outline: 2px solid #355;
+	outline-offset: -2px;
+	border: none;
+}
+.class_textinput:focus {
+	color: #CCF;
+	background: #000;
+	outline: 2px solid #7AA;
+}
+
+.class_textarea {
+	color: #FFF;
+	background: #000;
+	height: 40px;
+	margin:  2px;
+	outline: 2px solid #355;
+	color: #CCF;
+	position: relative;
+	border: none;
+	padding: 0px;
+	resize: both;
+}
+.class_textarea:focus {
+	outline: 2px solid #7AA;
+}
+

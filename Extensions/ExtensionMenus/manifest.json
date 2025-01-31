@@ -1,0 +1,119 @@
+{
+
+  "manifest_version": 2,
+  "name": "ExtensionMenus",
+  "version": "1.1.0",
+  "description": "ExtensionMenus",
+
+  "icons": {
+    "48": "./icon-48.png"
+  },
+  
+  "browser_specific_settings": {"gecko": { "id": "ExtensionMenus@gmail.com" }},
+
+  "permissions": [
+    "downloads"
+  ],
+
+  "background": {
+	"scripts": [
+		"Lib/Utils/ClassUtil.js",
+		"Lib/Utils/UnicodeUtil.js",
+		"Lib/Utils/StringUtil.js",
+		"Lib/Classes/MapMap.js",
+		"Lib/Classes/FilterMap.js",
+		"Lib/Classes/TabMessengers.js",
+		"Lib/Classes/StorageInterfaceClient.js",
+		"Lib/Classes/StorageInterfaceServer.js",
+		"Background/db_background.js",
+		"Background/journal_background.js",
+		"Background/download_background.js",
+		"Background/fetch_background.js"
+	],
+	"persistent": true
+  },
+
+  "content_scripts": [
+    {
+		"css": [
+			"Components/Div.css",
+			"Components/Button.css",
+			"Components/ButtonCycle.css",
+			"Components/ButtonSet.css",
+			"Components/Grid.css",
+			"Components/Text.css",
+			"Components/Menu.css",
+			"Components/Image.css",
+			"Components/Slider.css",
+			"Components/Timer.css",
+			"Components/TextInput_Selector.css",
+			"Components/PlaylistItem.css"
+		],
+		"js": [
+			"Lib/Utils/ClassUtil.js",
+			"Lib/Utils/MiscUtil.js",
+			"Lib/Utils/LinkInfoUtil.js",
+			"Lib/Utils/UnicodeUtil.js",
+			"Lib/Utils/StringUtil.js",
+			"Lib/Utils/StreamUtil.js",
+			"Lib/Utils/ConvertUtil.js",
+			"Lib/Utils/PromiseUtil.js",
+			"Lib/Utils/FetchUtil.js",
+			"Lib/Utils/ComponentUtil.js",
+			"Lib/Classes/Callbacks.js",
+			"Lib/Classes/SizeEstimators.js",
+			"Lib/Classes/Timers.js",
+			"Lib/Classes/WaitConditions.js",
+			"Lib/Classes/ChangeDetector.js",
+			"Lib/Classes/AsyncCacheValue.js",
+			"Lib/Classes/AsyncCacheMap.js",
+			"Lib/Classes/FilterMap.js",
+			"Lib/Classes/MapMap.js",
+			"Lib/Classes/SetMap.js",
+			"Lib/Classes/StagedMap.js",
+			"Lib/Classes/StagedSet.js",
+			"Lib/Classes/TreeMap.js",
+			"Lib/Classes/BlockListMap.js",
+			"Lib/Classes/TaskQueue.js",
+			"Lib/Classes/StorageOperationBuffer.js",
+			"Lib/Classes/TabMessengers.js",
+			"Lib/Classes/StorageInterfaceClient.js",
+			"Lib/Classes/StorageInterfaceServer.js",
+			"Lib/Classes/RevertableValue.js",
+			"Lib/Classes/LinearBlockMap.js",
+			"Background/db_foreground.js",
+			"Background/db_foreground.test.js",
+			"Background/journal_foreground.js",
+			"Background/download_foreground.js",
+			"Background/fetch_foreground.js",
+			"Components/Div.js",
+			"Components/Button.js",
+			"Components/ButtonCycle.js",
+			"Components/ButtonSet.js",
+			"Components/Grid.js",
+			"Components/Text.js",
+			"Components/Menu.js",
+			"Components/Link.js",
+			"Components/Image.js",
+			"Components/Slider.js",
+			"Components/Timer.js",
+			"Components/TextInput_Selector.js",
+			"Components/PlaylistItem.js",
+			"Components/DropdownList.js",
+			"Content_Menus.js",
+			"Tools/tools_download_buttons.js",
+			"Tools/tools_journal_playlist.js",
+			"Content/content_stream_youtube.js",
+			"Tools/tools_dom_browser.js",
+			"Content_StyleMacros.js",
+			"Tools/tools_capture.js",
+			"Tools/tools_video_sliders.js",
+			"Tools/tools_video_transform.js",
+			"Tools/tools_link_accumulator.js",
+			"Tools/tools_journal_editor.js",
+			"PostScript.js"
+        ],
+        "matches": ["*://*/*"]
+    }
+  ]
+}

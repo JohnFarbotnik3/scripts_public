@@ -1,0 +1,53 @@
+{
+
+  "manifest_version": 2,
+  "name": "TestRunner",
+  "version": "1.0.0",
+  "description": "TestRunner",
+
+  "icons": {
+    "48": "./icon-48.png"
+  },
+  
+  "browser_specific_settings": {"gecko": { "id": "TestRunner@gmail.com" }},
+
+  "background": {
+	"scripts": [
+		"Lib/Utils/MiscUtil.js",
+		"Lib/Utils/LinkInfoUtil.js",
+		"Lib/Utils/StringUtil.js",
+		"Lib/Utils/StreamUtil.js",
+		"Lib/Utils/ConvertUtil.js",
+		"Lib/Utils/PromiseUtil.js",
+		"Lib/Utils/FetchUtil.js",
+		"Lib/Utils/Util_DownloadQueue.js",
+		"Lib/Utils/ComponentUtil.js",
+		"Lib/Utils/UnicodeUtil.js",
+		"Lib/Utils/MapTestUtil.js",
+		"Lib/Classes/Callbacks.js",
+		"Lib/Classes/Timers.js",
+		"Lib/Classes/Timers.test.js",
+		"Lib/Classes/WaitConditions.js",
+		"Lib/Classes/AsyncCacheValue.js",
+		"Lib/Classes/AsyncCacheMap.js",
+		"Lib/Classes/FilterMap.js",
+		"Lib/Classes/FilterMap.test.js",
+		"Lib/Classes/MapMap.js",
+		"Lib/Classes/SetMap.js",
+		"Lib/Classes/StagedMap.js",
+		"Lib/Classes/StagedSet.js",
+		"Lib/Classes/TreeMap.js",
+		"Lib/Classes/TaskQueue.js",
+		"Lib/Classes/StorageOperationBuffer.js",
+		"Lib/Classes/StorageOperationBuffer.test.js",
+		"Lib/Classes/SizeEstimators.js",
+		"Lib/Classes/BlockListMap.js",
+		"Lib/Classes/BlockListMap.test.js",
+		"Lib/Classes/StorageInterfaceClient.js",
+		"Lib/Classes/StorageInterfaceServer.js",
+		"Lib/Classes/StorageInterface.test.js",
+		"Main.js"
+	],
+	"persistent": true
+  }
+}

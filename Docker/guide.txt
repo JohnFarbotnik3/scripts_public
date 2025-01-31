@@ -1,0 +1,89 @@
+
+# ---------- start the docker daemon ----------
+# run in console:
+sudo dockerd
+
+# run in systemd:
+sudo systemctl start docker
+# stop:
+sudo systemctl stop docker
+# restart
+sudo systemctl restart docker
+
+# ---------- common commands ----------
+sudo docker pull name:tag
+sudo docker pull ubuntu:jammy@sha256:c9cf959fd83770dfdefd8fb42cfef0761432af36a764c077aed54bbc5bb25368
+sudo docker image ls -a
+sudo docker container ls -a
+sudo docker ps -a
+sudo docker logs <container name>
+sudo docker system prune -a --volumes
+
+# build an image from Dockerfile
+sudo docker build -t <ImageName> ./
+sudo docker build -t "i-blender" -f "./dockerfile-blender" ./
+
+# run docker image as container.
+# [-d=detached] [-t=allocate pseudo-TTY] [-i=interactive]
+sudo docker run --publish 4327:4327 --name "ContainerName" ImageName
+sudo docker run -d -t --publish 4327:4327 --name "c-blender" e4c58958181a
+sudo docker run -d -t --publish 4327:4327 --name "c-blender" \
+	--mount type=bind,source=/dev/shm/docker/shared,target=/home/shared \
+	"i-blender"
+
+# start/stop container:
+sudo docker container stop  "c-blender"
+sudo docker container start "c-blender"
+
+# delete container
+sudo docker container rm "ContainerName"
+sudo docker container rm "c-blender"
+
+# execute command in running container.
+# [-d=detached] [-t=allocate pseudo-TTY] [-i=interactive]
+sudo docker exec -i -t "ContainerName" <command (ex. bash)>
+sudo docker exec -i -t "c-blender" bash
+
+# ---------- all base docker commands ----------
+attach			Attach local standard input, output, and error streams to a running container
+build			Build an image from a Dockerfile
+commit			Create a new image from a container's changes
+config			Manage Swarm configs
+container		Manage containers
+cp				Copy files/folders between a container and the local filesystem
+create			Create a new container
+diff			Inspect changes to files or directories on a container's filesystem
+events			Get real time events from the server
+exec			Execute a command in a running container
+export			Export a container's filesystem as a tar archive
+history			Show the history of an image
+image			Manage images
+images			List images
+import			Import the contents from a tarball to create a filesystem image
+info			Display system-wide information
+kill			Kill one or more running containers
+load			Load an image from a tar archive or STDIN
+logs			Fetch the logs of a container
+pause			Pause all processes within one or more containers
+plugin			Manage plugins
+port			List port mappings or a specific mapping for the container
+ps				List containers
+pull			Download an image from a registry
+rename			Rename a container
+restart			Restart one or more containers
+rm				Remove one or more containers
+rmi				Remove one or more images
+run				Create and run a new container from an image
+save			Save one or more images to a tar archive (streamed to STDOUT by default)
+start			Start one or more stopped containers
+stats			Display a live stream of container(s) resource usage statistics
+stop			Stop one or more running containers
+system			Manage Docker
+tag				Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+top				Display the running processes of a container
+trust			Manage trust on Docker images
+unpause			Unpause all processes within one or more containers
+update			Update configuration of one or more containers
+version			Show the Docker version information
+volume			Manage volumes
+

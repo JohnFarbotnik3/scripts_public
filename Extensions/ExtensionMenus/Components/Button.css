@@ -1,0 +1,23 @@
+
+._Button {
+	display: flex;
+	color: #FFF;
+	background: #055;
+	margin:  2px;
+	padding: 2px;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	user-select: none;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+._Button:hover {
+	opacity: 1.0;
+}
+
+._Button:active {
+	filter: brightness(150%);
+}
+

@@ -1,0 +1,8 @@
+
+.class_image {
+	background: radial-gradient(green, blue, red, #FFF, #0000);
+	object-fit: contain;
+	width: inherit;
+	height: inherit;
+};
+

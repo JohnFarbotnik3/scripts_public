@@ -1,0 +1,31 @@
+{
+
+  "manifest_version": 2,
+  "name": "Fetcher",
+  "version": "1.0.0",
+  "description": "Extra processing for fetch requests",
+
+  "icons": {
+    "48": "./icon-48.png"
+  },
+  
+  "browser_specific_settings": {"gecko": { "id": "FetchProcessing@gmail.com" }},
+
+  "permissions": [ "downloads", "webRequest", "webRequestBlocking", "<all_urls>" ],
+
+  "background": {
+	"scripts": [
+		"util_hash.js",
+		"fetch_background.js"
+	],
+	"persistent": true
+  },
+
+  "content_scripts": [
+    {
+		"css": [],
+		"js": [],
+        "matches": ["*://*/*"]
+    }
+  ]
+}
